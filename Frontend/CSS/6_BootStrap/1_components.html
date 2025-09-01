@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!--    If we want to further customize the bootstrap, we can use the CSS file, but it should be placed after the bootstrap and similar to the js file -->
+    <link rel="stylesheet" href="1_components.css">
+</head>
+<body>
+
+<nav class="navbar bg-primary fixed-top navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">Brand Name</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#">About Us</a>
+            </div>
+        </div>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h2>BootStrap Demo</h2>
+    <p>Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.</p>
+    <p>Bootstrap is a widely used, open-source front-end framework that simplifies and speeds up web development by
+        providing a collection of pre-built HTML, CSS, and JavaScript components. It is designed with a "mobile-first"
+        philosophy, meaning that websites built with Bootstrap are inherently responsive and adapt seamlessly to various
+        screen sizes and devices. Developers leverage Bootstrap's grid system, typography, forms, buttons, navigation
+        elements, and JavaScript plugins to create consistent, visually appealing, and functional web interfaces with
+        reduced coding effort. This framework promotes efficient development by offering reusable code and adhering to
+        best practices, making it a popular choice for both small projects and large-scale applications.</p>
+
+
+    <button class="btn btn-danger">btn one</button>
+    <button class="btn btn-outline-success">btn two</button>
+    <button class="btn btn-outline-warning btn-lg">btn three</button>
+    <button class="btn btn-outline-info btn-sm" disabled>btn four</button>
+    <!--we can use the anchor tag as well for the button-->
+    <a href="#" class="btn btn-outline-dark">Google me!</a>
+
+    <br>
+
+    <h3>Notification <span class="badge bg-primary">10+</span></h3>
+    <br>
+    <button class="btn btn-primary">
+        Followers <span class="badge rounded pill bg-secondary">100+</span>
+    </button>
+
+    <br>
+    <br>
+
+    <button type="button" class="btn btn-primary position-relative">
+        Profile
+        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+    <span class="visually-hidden">New alerts</span>
+  </span>
+    </button>
+    <button type="button" class="btn btn-primary position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+    </button>
+
+    <br>
+    <br>
+
+
+    <div class="alert alert-danger">Download Failed! Please try again later...</div>
+    <div class="alert alert-success alert-dismissible">Congratulations <button class="btn-close" data-bs-dismiss="alert"></button> </div>
+    <br>
+    <div class="btn-group">
+        <button class="btn btn-outline-success">Push</button>
+        <button class="btn btn-outline-success">Pull</button>
+        <button class="btn btn-outline-success">Raw</button>
+    </div>
+    <br>
+    <br>
+    <div class="card" style="width: 18rem">
+        <img src="/Frontend/CSS/5_MiniProject/avatar.jpg" alt="avatar" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Avatar 3</h5>
+            <p class="card-text"> The film will introduce the Ash People, a new aggressive, volcanic Na’vi tribe, marking a significant shift in the portrayal of the Na’vi by showing a more complex and potentially darker side to their culture. </p>
+            <a href="#" class="btn btn-primary">Know more</a>
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
