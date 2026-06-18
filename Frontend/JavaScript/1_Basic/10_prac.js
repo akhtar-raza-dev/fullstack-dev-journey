@@ -7,7 +7,7 @@ console.log(ans); // Output: [7, 9, 0]
 //! 2
 
 let ans2 = arr.slice(arr.length - n);
-console.log(ans2); //
+console.log(ans2); // Output: [9, 0, -2] - Last 3 elements of the array
 
 //! 3
 
@@ -32,7 +32,10 @@ if(str1[idx] === str1[idx].toLowerCase()) {
 //! 5
 let str2 = prompt("Enter a string:");
 console.log(`original string: ${str2}`);
-console.log(`string without spaces: ${str.trim()}`);
+console.log(`string with trimmed spaces (beginning/end only): ${str2.trim()}`);
+// Note: trim() removes spaces only from start and end, not from the middle
+// To remove ALL spaces use: str2.replace(/\s/g, '')
+console.log(`string without all spaces: ${str2.replace(/\s/, '')}`);
 
 //! 6
 let arr2 = ["hello", 'a', 23, 64, 99, -6];

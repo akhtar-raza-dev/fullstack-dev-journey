@@ -1,4 +1,4 @@
-//! Break statement mostly used in while loops to exit the loop when a certain condition is met.
+//! Break statement is mostly used in while loops to exit the loop when a certain condition is met.
 
 const favMovies = "avatar";
 let guess = prompt("Guess my Favorite Movie(Hint: Creatures are blue): ");

@@ -1,37 +1,38 @@
-//* To access the object value using the key
+//* How to access values from an object using keys
 
 const obj = {
     name: 'John',
     age: 30,
     city: 'New York'
 }
-//? 1) using dot notation - most used
+//? 1) Dot notation - easiest when you know the property name
 console.log(obj.name); // John
 
 
-//? 2) using bracket notation - used when we have a variable
+//? 2) Bracket notation - useful when the key is in a variable
 console.log(obj["age"]); // 30
-//! console.log(obj[city]); ReferenceError: city is not defined, so use quotes
+//! console.log(obj[city]); // ReferenceError: city is not defined, so use quotes around the key
 
-//! if we want to count the age
+//! If the key is stored in a variable, bracket notation works
 let updatedAge = "age";
 console.log(obj[updatedAge]); // 30
-//? But won't work with dot notation
+//? Dot notation treats updatedAge as the literal property name, not the variable value
 console.log(obj.updatedAge); // undefined
 
-//* Js automatically converts the key to string
-//* if the key is a number, it will be converted to string , null to string, undefined to string, true/false to string
+//* JavaScript converts object keys to strings automatically
+//* So numbers, booleans, null, and undefined become string keys behind the scenes
 
 const obj2 = {
     1: 'one',
     2: 'two',
     true: 'a',
     null: 'e',
-    undefined: 'd'
+    undefined: 'd',
+    "fan": "cool" // written inside quotes too because at the end keys are always strings.
 }
 
-//todo Rare case, but useful to know when you have numeric keys or boolean keys
-console.log(obj2[1]); //! one (here 1 is a number which is converted to string and all the rest are same)
+//todo This is less common, but useful when keys look like numbers or booleans
+console.log(obj2[1]); //! one (1 becomes "1")
 console.log(obj2["1"]); // one
 console.log(obj2[2]); // two
 console.log(obj2["2"]); // two
@@ -42,6 +43,8 @@ console.log(obj2["null"]); // e
 console.log(obj2[undefined]); // d
 console.log(obj2["undefined"]); // d
 
-//* for dot operation , number will not work
+//* With dot notation, numeric keys do not work
 console.log(obj2.true);
 // console.log(obj2.1); // SyntaxError: Unexpected number
+console.log(obj2.undefined);
+console.log(obj2.null);

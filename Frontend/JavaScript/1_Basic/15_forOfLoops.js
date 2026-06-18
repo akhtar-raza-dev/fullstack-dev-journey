@@ -1,32 +1,48 @@
+//todo do while loop is also supported in js
+//! for...of loops — iterate over iterable values (arrays, strings, Map, Set, etc.)
 
-//!  for of loops - used to iterate over iterable objects like arrays, strings, maps, sets, etc.
+let heros = ["Iron Man", "Spider-Man", "Thor", "Hulk", "Captain America"];
 
-let heros = ["Iron Man", "Spider", "Thor", "Hulk", "Captain America"];
-
+// for...of gives each value directly
 for (let hero of heros) {
     console.log(hero);
 }
 
+// Works with strings too (iterates characters)
 let str = "ApnaCollege";
 for (let char of str) {
     console.log(char);
 }
 
-//? the below code is equivalent to(Captain America) the above for of loop if type is not mentioned for hero, making it as global variable.
-//? if type is mentioned, it will be local variable.
-// console.log(hero); // error: hero is not defined
+// Important note about loop variable declaration:
+// - Always declare the loop variable (let/const/var). Omitting the declaration
+//   (e.g. `for (hero of heros)`) can create a global variable in non-strict mode
+//   or throw a ReferenceError in strict mode. Don't rely on that behavior.
+// Example (bad practice, shown commented):
+// for (hero of heros) { console.log(hero); } // if 'hero' is not declared, this is unsafe
+// console.log(hero); // may print last value in non-strict mode — avoid this
 
-//todo    for of loop with nested arrays
-let heros2 = [["Iron Man ", "Spider", "Thor", "Hulk", "Captain America"],["Batman", "Superman", "Flash", "Green Lantern"]];
+// for...of with nested arrays (iterate each sub-array, then its elements)
+let heros2 = [
+    ["Iron Man", "Spider-Man", "Thor", "Hulk", "Captain America"],
+    ["Batman", "Superman", "Flash", "Green Lantern"]
+];
 
-for(let list of heros2) {
-    for(let hero of list) {
+for (let list of heros2) {
+    for (let hero of list) {
         console.log(hero);
     }
 }
 
-//* for Internet Explorer, for of loop is not supported, so use for in loop instead.
+// for...in is different: it iterates enumerable property keys (object keys or array indexes).
+// It's NOT a direct replacement for arrays because it iterates keys (strings) and
+// can include inherited enumerable properties. Prefer for...of, classic for, or
+// Array.prototype.forEach for arrays.
 
+// Compatibility note: older Internet Explorer versions do not support for...of.
+// If you must support those browsers, use a classic for loop or Array.prototype.forEach.
+
+// Classic indexed loop (always supported)
 for (let i = 0; i < heros.length; i++) {
     console.log(heros[i]);
 }
