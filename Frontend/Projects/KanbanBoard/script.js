@@ -30,6 +30,7 @@ function closeModal() {
   taskForm.reset();
   taskFormOverlay.classList.add('hidden');
 }
+
 function createCard(task) {
   const card = document.createElement('div');
   card.className = 'flex flex-col gap-2 bg-slate-800 rounded-lg p-3';
@@ -41,7 +42,6 @@ function createCard(task) {
   const description = document.createElement('p');
   description.className = 'leading-relaxed text-slate-300 text-sm';
   description.textContent = task['task-description'];
-
   const deleteBtn = document.createElement('button');
   deleteBtn.className =
     'flex self-end bg-red-500 hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 text-slate-50 rounded-lg py-1 px-2 font-semibold text-sm capitalize';
@@ -111,7 +111,6 @@ function updateCounts() {
   progressCount.textContent = `${counts.progress}`;
   doneCount.textContent = `${counts.done}`;
 }
-
 // RENDER
 function renderTasks() {
   allTasks.forEach((task) => {
@@ -149,8 +148,8 @@ kanbanColumns.forEach((col) => {
   col.container.addEventListener('dragover', (e) => e.preventDefault());
 
   // DragEnter: Increment counter and add premium hover styles
-  col.container.addEventListener('dragenter', (e) => {
-    e.preventDefault();
+
+  col.container.addEventListener('dragenter', () => {
     col.counter++;
     col.list.classList.add(...col.classes);
   });
@@ -169,5 +168,4 @@ kanbanColumns.forEach((col) => {
     col.list.classList.remove(...col.classes);
     handleDrop(col.status); // Passes 'todo', 'progress', or 'done' dynamically
   });
-
 });
