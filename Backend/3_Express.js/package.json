@@ -9,6 +9,6 @@
   "author": "akhtar raza",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.2.1"
   }
 }

@@ -9,7 +9,7 @@
 // 4) Response: Sends a response back to the client
 
 //* Ports - They are the logical endpoints of a network connection that is used to exchange information between a web server and a web client.
-//* Routing - It is process of selecting a path for traffic in a network or between or across multiple networks.
+//* Routing - It is the process of selecting a path for traffic in a network or between or across multiple networks.
 
 
 const express = require('express');
@@ -37,6 +37,7 @@ app.listen(port, () => {
 //* 2) app.get() -> get() is a method that is used to define a route for a GET request. It takes a path(if path not found throws error) and a callback function as arguments.
 app.get('/', (req, res) => {
     res.send("you contacted root path");
+    // console.log("received")
 });
 app.get('/about', (req, res) => {
     res.send("you contacted about path");

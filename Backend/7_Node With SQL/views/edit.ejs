@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Username</title>
+</head>
+<body>
+<h2>You are about to edit this user: <%= user.email%> </h2>
+<!--we used package method_override because form does not support patch or put method-->
+<form method="post" action="/user/<%= user.id %>?_method=PATCH">
+    <label for="user">Username:</label>
+    <input type="text" id="user" name="username" value="<%= user.username %>">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="enter password">
+    <br>
+    <button>Edit</button>
+</form>
+</body>
+</html>

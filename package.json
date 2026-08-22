@@ -19,5 +19,8 @@
   "homepage": "https://github.com/fskvm/fullstack-dev-journey#readme",
   "devDependencies": {
     "prettier": "^3.8.4"
+  },
+  "dependencies": {
+    "uuid": "^14.0.2"
   }
 }

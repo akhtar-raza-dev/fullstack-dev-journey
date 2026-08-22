@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit the post</title>
+    <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+<h2>Edit The Post</h2>
+<h3>Post ID: <%= post.id %></h3>
+<h3>User Name:<%= post.username %></h3>
+<!--By Default, html supports only get and post method, but we have used the package method-override to use  PATCH,PUT,DELETE in place of POST -->
+<form action="/posts/<%= post.id %>/?_method=PATCH" method="POST">
+    <div class="form-group">
+        <label for="content">Edit The Content</label>
+        <textarea id="content" name="content" rows="4" placeholder="What do you want to edit?" required><%= post.content %></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+</body>
+</html>

@@ -1,12 +1,12 @@
 //* Templating - It is a process of creating a template for a web page or an application. Some Popular Templating are Handlebars, EJS, Pug (formerly Jade), Mustache.
 //* EJS(Embedded JavaScript) - It is a simple templating language that lets you generate HTML markup with plain JavaScript. It is a popular choice for Node.js applications.
-
+//? It is less used in era of React - You use EJS or Handlebars when you just need the server to quickly spit out a static HTML document or an email layout.
 
 const express = require('express');
 const app = express();
 const path = require('path'); //! path is used to specify the path of the file. if we start the server with not the direct directory where the views folder is.
 
-//? We can notice that we have not require ejs package like express because it is internally required by express by default.
+//? We can notice that we have not require() ejs package like express because it is internally required by express by default.
 app.set('views engine', 'ejs');
 app.set('views', path.join(__dirname, "/views")); //!  we whatever mentioned the dir name /views it should be same(whatever name we can give to views but recommended to use views)
 //! __dirname - It is a special variable that contains the absolute path of the current directory (for ex- backend/4_EJS/ ). +  /views -> backend/4_EJS/views
@@ -41,7 +41,7 @@ app.get('/roll', (req, res) => {
 
 //* A little instagram username page
 app.get('/ig/:user', (req, res) => {
-    let { user : username } = req.params; //? we can the user to username if we want to change the name of the variable.
+    let { user : username } = req.params; //? we can change the user to username if we want to change the name of the variable.
     let followers = ["Sam", "Raza", "Akhtar"];
     res.render("instagram.ejs", { username , followers });
 });

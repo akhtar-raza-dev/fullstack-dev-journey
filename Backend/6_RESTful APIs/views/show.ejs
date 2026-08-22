@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        p {
+            display: block;
+            -webkit-line-clamp: none;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+<h1>See the post in Details</h1>
+<div class="post">
+    <h4 class="post-id"><%= post.id %></h4>
+    <h3 class="user"><span style="color:darkred">@</span><%= post.username %></h3>
+    <p class="content"><%= post.content %></p>
+</div>
+</body>
+</html>
